@@ -5,9 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
     <title>Home</title>
+    {% load static %}
 </head>
 <body>
-    <h1>Home</h1>
+    <h1>Welcome to the Mystery BookStore</h1>
     <a href="http://127.0.0.1:8000/store/">Store</a>
+    <p>
+        Welcome, {{ request.user.username}}! 
+        (<a href="{%url 'admin:logout' %}">Logout</a>)
+    </p>
+    <p>{{ request.session.location}}</p>
+    <img src="{% static 'base/img/header_mobile.jpg' %}" alt="bookstore header">
 </body>
 </html>

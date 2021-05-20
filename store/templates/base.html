@@ -4,23 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Store</title>
+    <title>Document</title>
 </head>
 <body>
-    <h1>Store</h1>
     <nav>
+        <h1>Store</h1>
         <ul>
         <li><a href="{% url 'index' %}">Home</a></li>
         <li><a href="{% url 'store' %}">Home</a></li>
         <li><a href="{% url 'admin:index' %}">Admin</a></li>
         </ul>
     </nav>
-    {{cardinality_text}}
-
-    {% if count == 1 %}
-    There is {{count}} book in the store
-    {% else %}
-    There are {{count}} books in the store
-    {% endif %}
+    {% block content %}
+        # this is substituted in the child template
+    {% endblock %}
 </body>
 </html>

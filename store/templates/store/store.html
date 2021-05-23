@@ -13,8 +13,16 @@
         <li><a href="{% url 'index' %}">Home</a></li>
         <li><a href="{% url 'store' %}">Home</a></li>
         <li><a href="{% url 'admin:index' %}">Admin</a></li>
+        <li><a href="{% url 'new_book' %}" >New Book</a></li>
         </ul>
     </nav>
+<ul>
+    {% for book in books %}
+    <li><strong>{{ book.title }}</strong> by <em>{{ book.author }}</em>:
+    {{ book.description }}. {{book.publish_date }}
+    </li>
+    {% endfor %}
+</ul>
     {{cardinality_text}}
 
     {% if count == 1 %}
